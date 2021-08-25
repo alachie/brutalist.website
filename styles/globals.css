@@ -1,13 +1,17 @@
+:root {
+  --background: #F0F0F0;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: 'Helvetica';
+  /* font-family: 'Helvetica'; */
 }
 
 body {
   padding: 2rem;
-  background-color: #F0F0F0;
+  background-color: var(--background);
 }
 
 h1, h2, h3, h4, h5, h6, ul, ol {
@@ -38,10 +42,34 @@ ol li {
   counter-increment: step-counter;
 }
 
+.page-wrapper {
+  position: absolute;
+  top: 0;
+  padding-top: 2rem;
+}
+
+ol a:hover {
+  color: var(--background);
+  background: black;
+}
+
 ol li::before {
   content: counter(step-counter);
   font-family: 'Times New Roman', Times, serif;
-  margin-right: 1rem;
+  margin-right: 1em;
+}
+
+.display_list {
+  font-size: calc(8vw + 1rem);
+}
+
+.display_list li {
+  transition: all 0.3s ease-in-out;
+}
+
+
+.display_list li::before {
+  margin-right: .5em;
 }
 
 .about-box {
@@ -70,4 +98,5 @@ footer {
   top: 0;
   left: 0;
   z-index: -1;
+  opacity: 0.5;
 }

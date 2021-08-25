@@ -20,7 +20,12 @@ export default function DrawBg() {
             ctx.moveTo(e.clientX, e.clientY);
         }
 
+        function clear() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
         document.addEventListener("mousemove", draw)
+        document.addEventListener("mousedown", clear)
 
     }, [])
     
