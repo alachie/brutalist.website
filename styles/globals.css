@@ -10,7 +10,7 @@ body {
 }
 
 body {
-  padding: 2rem;
+  /* padding: 2rem; */
   background-color: var(--background);
 }
 
@@ -46,6 +46,8 @@ ol li {
   position: absolute;
   top: 0;
   padding-top: 2rem;
+  overflow-x: hidden;
+  width: 100vw;
 }
 
 ol a:hover {
@@ -61,6 +63,8 @@ ol li::before {
 
 .display_list {
   font-size: calc(8vw + 1rem);
+  /* writing-mode: vertical-rl;
+  text-orientation: mixed; */
 }
 
 .display_list li {
@@ -99,4 +103,54 @@ footer {
   left: 0;
   z-index: -1;
   opacity: 0.5;
+}
+
+.marquee-wrapper {
+  display: block;
+  width: 100%;
+  font-size: 10vw;
+  white-space: nowrap;
+  text-transform: uppercase;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+.marquee-inner,
+.marquee-inner div {
+  display: inline-block;
+}
+
+.marquee-inner {
+  animation: marquee 20s infinite linear;
+}
+
+.marquee-right .marquee-inner {
+  animation: marquee-right 20s infinite linear !important;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+@keyframes marquee-right {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.page-title {
+  font-size: 23.5vw;
+  font-weight: bold;
+  line-height: .8em;
 }

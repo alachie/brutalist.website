@@ -2,8 +2,10 @@ import { useRef, useEffect, useState } from 'react'
 import Link from 'next/link'
 import {motion} from 'framer-motion'
 import Head from 'next/head'
-import DrawBg from '../components/drawBg';
 import classNames from 'classnames';
+import useLocalStorage from '../lib/useLocalStorage';
+
+import DrawBg from '../components/drawBg';
 
 const variants = {
   initial: { 
@@ -21,17 +23,43 @@ const variants = {
   }
 }
 
+const fadeIn = {
+  initial: { 
+    opacity: 0,
+  },
+  visible: { 
+    opacity: 1,
+    transition: {
+      duration: .1,
+      ease: [.61,.43,.12,.96]
+    } 
+  },
+  exit: {
+    opacity: 1,
+  }
+}
+
+
 export default function Home() {
   const List = useRef();
+  
+  const useSSRLocalStorage = (key, initial) =>
+    typeof window !== "undefined" ? useLocalStorage(key, initial) : [initial];
 
   const [showAbout, setAbout] = useState(false)
   const [showQuestion, setQuestion] = useState(false)
   const [reload, setReload] = useState(0)
-  const [fontSize, setFontSize] = useState(16)
-  const [bgColour, setBgColour] = useState('lightgrey')
-  const [font, setFont] = useState('sans')
 
-  const [displayMode, setDisplayMode] = useState('grid')
+  const [z, setZ] = useState(1)
+  const updateZ = (event) => {
+    setZ(z + 1)
+    event.currentTarget.style.zIndex = z;
+  }
+
+  const [fontSize, setFontSize] = useSSRLocalStorage('fontSize', 16)
+  const [bgColour, setBgColour] = useSSRLocalStorage('bgColor', 'lightgrey')
+  const [font, setFont] = useSSRLocalStorage('font', 'sans')
+  const [displayMode, setDisplayMode] = useSSRLocalStorage('display', 'grid')
 
   const getRandom = (min, max) => Math.floor(Math.random()*(max-min+1)+min);
 
@@ -56,6 +84,13 @@ export default function Home() {
         item.style.removeProperty('position');
         item.style.removeProperty('left');
         item.style.removeProperty('top');
+      }) 
+
+      const aboutBoxes = Array.prototype.slice.call(document.querySelectorAll('.about-box'))
+      aboutBoxes.forEach((item) => {
+        item.style.position = 'absolute';
+        item.style.left = getRandom(0, window.innerWidth - 200) + 'px';
+        item.style.top = getRandom(0, window.innerHeight - 200) + 'px';
       }) 
     }
   }, [showAbout, showQuestion, reload, displayMode])
@@ -102,6 +137,12 @@ export default function Home() {
     setFont(e.target.value)
   }
 
+  useEffect(() => {
+    if(displayMode === "list") {
+      List.current.classList.add('display_list')
+    }
+  }, [])
+
   return (
     <motion.div
       initial="initial"
@@ -115,23 +156,30 @@ export default function Home() {
       </Head>
       <h1>🌐 Brutalist.Website</h1>
 
-      <ol ref={List} className={classNames({"display_list": (displayMode === "list")})}>
-        <li><Link href="/layout">Layout</Link></li>
-        <li><Link href="/typography">Typography</Link></li>
-        <li><Link href="/interaction">Interaction</Link></li>
-        <li><Link href="/colours">Colours</Link></li>
-        <li><a href="#" onClick={() => {setAbout(true);setQuestion(true)}}>About</a></li>
-      </ol>
-
+      <motion.ol ref={List} className={classNames({"display_list": (displayMode === "list")})}
+        initial="initial" animate="visible" exit="exit" variants={{
+          exit: {
+            transition: { staggerChildren: .1}
+          },
+          visible: {
+            transition: { staggerChildren: 0.1}
+          }
+        }}
+      >
+        <motion.li variants={fadeIn}><Link href="/layout">Layout</Link></motion.li>
+        <motion.li variants={fadeIn}><Link href="/typography">Typography</Link></motion.li>
+        <motion.li variants={fadeIn}><Link href="/interaction">Interaction</Link></motion.li>
+        <motion.li variants={fadeIn}><Link href="/colours">Colours</Link></motion.li>
+        <motion.li variants={fadeIn}><a href="#" onClick={() => {setAbout(true);setQuestion(true)}}>About</a></motion.li>
+      </motion.ol>
       
-
-      {showQuestion && <motion.div className="about-box" drag dragMomentum={false}>
+      {showQuestion && <motion.div className="about-box" drag dragMomentum={false} onMouseDown={updateZ}>
         <h2>🔬 Research Question</h2>
         <p>Investigating the aesthetic signifiers of brutalist web design through the creation of an educational website/interactive experience, as practice-based research.</p>
         <button onClick={() => {setQuestion(false)}}>&times;</button>
       </motion.div>}
 
-      {showAbout && <motion.div className="about-box" drag dragMomentum={false}>
+      {showAbout && <motion.div className="about-box" drag dragMomentum={false} onMouseDown={updateZ}>
         <h2>🤔 About</h2>
         <p>Feugiat massa amet mauris condimentum eget, sociis conubia ridiculus morbi.</p>
         <button onClick={() => {setAbout(false)}}>&times;</button>
@@ -145,6 +193,7 @@ export default function Home() {
           <button onClick={() => {setDisplayMode('list')}}>List</button>
           <input type="range" min="16" max="30" value={fontSize} onChange={onFontChange} step="0.1" />
           <input type="color" value="#ff0000" value={bgColour} onChange={onBgChange}/>
+          
           <select name="font" onChange={handleFontSelect}>
             <option value="sans">Sans-serif</option>
             <option value="serif">Serif</option>

@@ -27,6 +27,8 @@ const Image = ({src, count}) => {
             x: Math.max(0, Math.floor(Math.random() * window.innerWidth - imgRef.current.offsetWidth)), 
             y: Math.max(0, Math.floor(Math.random() * window.innerHeight - imgRef.current.offsetHeight))
         })
+
+        imgRef.current.style.setProperty('transform', '0px 0px')
     }, [count]);
 
     return (

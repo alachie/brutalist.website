@@ -1,0 +1,66 @@
+.image-smear-page {
+    margin: 0;
+    background-size: cover;
+    width: 100%;
+}
+
+.image-smear-page p {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.image-smear-page canvas {
+    cursor: crosshair;
+}
+
+.image-smear-page canvas:active {
+    cursor: grabbing;
+}
+
+
+.checker-bg {
+    background-image: linear-gradient(45deg, #bfbfbf 25%, transparent 25%),
+    linear-gradient(-45deg, #bfbfbf 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #bfbfbf 75%),
+    linear-gradient(-45deg, transparent 75%, #bfbfbf 75%);
+    background-size: 20px 20px;
+    background-position: 0 0,
+    0 10px,
+    10px -10px,
+    -10px 0px;
+}
+
+.threed-page {
+    width: 100%;
+    height: 100vh;
+    cursor: grab;
+}
+
+.dvd-page {
+    background: black;
+    width: 100%;
+    height: 100%;
+}
+
+.dvd-page .dvd {
+    position: absolute;
+    width: 10rem;
+    height: 10rem;
+    color: black;
+    font-size: 2rem;
+    font-family: sans-serif;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dvd-page .dvd-ball {
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    font-size: 4rem;
+    background: transparent !important;
+}
