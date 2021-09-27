@@ -1,96 +1,133 @@
-@keyframes rainbowbg {
+/* @keyframes rainbowbg {
     0% {
-        color: #A1489B;
+        background-color: #ff65f5;
+        background-color: #FA6900;
     }
 
     5% {
-        color: #E8C8E9;
+        background-color: #EF404A;
     }
 
     10% {
-        color: #FCB5C5;
+        background-color: #797979;
     }
 
     15% {
-        color: #F43BB8;
+        background-color: #F43BB8;
     }
 
     20% {
-        color: #EF404A;
+        background-color: #EF404A;
     }
 
     25% {
-        color: #FA6900;
+        background-color: #FA6900;
     }
 
     30% {
-        color: #F7941E;
+        background-color: #F7941E;
     }
 
     35% {
-        color: #FFCB05;
+        background-color: #FFCB05;
     }
 
     40% {
-        color: #FFFEAE;
+        background-color: #FFFEAE;
     }
 
     45% {
-        color: #C8D383;
+        background-color: #C8D383;
     }
 
     50% {
-        color: #A6C885;
+        background-color: #A6C885;
     }
 
     55% {
-        color: #01AC88;
+        background-color: #01AC88;
     }
 
     60% {
-        color: #007F79;
+        background-color: #007F79;
     }
 
     65% {
-        color: #00A4A8;
+        background-color: #00A4A8;
     }
 
     70% {
-        color: #0066B3;
+        background-color: #0066B3;
     }
 
     75% {
-        color: #008ED1;
+        background-color: #008ED1;
     }
 
     80% {
-        color: #609CCF;
+        background-color: #609CCF;
     }
 
     85% {
-        color: #A1D4E5;
+        background-color: #A1D4E5;
     }
 
     90% {
-        color: #B0B8C1;
+        background-color: #B0B8C1;
     }
 
     95% {
-        color: #B09DC1;
+        background-color: #B09DC1;
     }
 
     100% {
-        color: #A1489B;
+        background-color: #A1489B;
+    }
+} */
+
+@keyframes rainbowbg {
+    0% {
+        background-color: #fa0000;
+    }
+    15% {
+        background-color: #fadd00;
+    }
+    25% {
+        background-color: #19b800;
+    }
+    40% {
+        background-color: #00fa4f;
+    }
+    50% {
+        background-color: #00faf6;
+    }
+    65% {
+        background-color: #005cfa;
+    }
+    80% {
+        background-color: #7d00fa;
+    }
+    95% {
+        background-color: #fa00d4;
+    }
+    100% {
+        background-color: #fa0000;
     }
 }
 
 .colours-page {
-    background-color: #FA6900;
+    /* background-background-color: #FA6900; */
+    animation: rainbowbg 20s infinite;
 }
 
 /* .colours-page h1 {
     animation: rainbowbg 200s
 } */
+
+.colours-page .page-title {
+    color: white;
+    mix-blend-mode: difference;
+}
 
 .section_colours {
     display: grid;
@@ -154,8 +191,7 @@
     display: flex;
     height: 4rem;
     align-items: center;
-    font-size: 2vw;
-    font-family: monospace;
+    font-size: 1vw;
 }
 
 .websafe_colour_block {
@@ -182,4 +218,47 @@
     width: 20vw;
     height: auto;
     animation: rotate 2s linear infinite;
+}
+
+.section_complementary {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    position: relative;
+}
+
+.section_complementary > div {
+    /* flex: 1; */
+    width: 33.33%;
+    height: 50%;
+    
+}
+
+.section_complementary .inner {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    mix-blend-mode: difference;
+    transition: border-radius 1s cubic-bezier(.61, .43, .12, .96),
+    transform 1s cubic-bezier(.61, .43, .12, .96);
+    transform: scale(1);
+}
+.section_complementary .inner:hover {
+    border-radius: 0;
+    transform: scale(0.5);
+}
+
+.section_complementary h2 {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    font-size: 8vw;
+    color: white;
+    mix-blend-mode: difference;
+    text-align: center;
+    line-height: .8em;
 }

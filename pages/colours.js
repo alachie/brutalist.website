@@ -61,13 +61,16 @@ export default function Colours() {
         </Head>
         
         <h1 className="page-title" style={{fontSize: '19.8vw'}}>Colours</h1>
-        <Link href="/">&larr; 🏠 home</Link>
+        <Link href="/"><a className="back-link">&larr; 🏠 Home</a></Link>
         
         <div>
+            <p className="info-block">Brutalist websites frequently use bright &amp; obnoxious colours to grab attention ⚠️</p>
             <Marquee>
               <div className="rainbow-stripe"></div>
               <div className="rainbow-stripe"></div>
             </Marquee>
+
+
 
             <EmojiRandom/>
 
@@ -78,8 +81,10 @@ export default function Colours() {
             </section> */}
 
             <section className="subpage_section section_websafe">
-              <h1>WEB SAFE COLOURS</h1>
+              <h1>BASIC HTML <span style={{fontFamily: "times new roman", fontWeight: 500}}>COLOURS</span>🎨</h1>
 
+              <p className="info-block">The basic colors are 16 colors defined in the HTML 4.01 specification in 1999</p>
+        
               <div className="websafe_table">
               {websafeColours.map(colour => (
                 <div className="websafe_row">
@@ -93,6 +98,7 @@ export default function Colours() {
             </section>
 
             <section className="subpage_section section_pinwheel checker-bg">
+
                 <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M6.04554 1.54443C6.819 1.64041 7.58642 1.88962 8.30385 2.30383C11.1736 3.96068 12.1569 7.63022 10.5 10.5C8.84315 7.63022 5.17361 6.64697 2.30385 8.30383C1.58746 8.71744 0.988625 9.25648 0.519081 9.87719C0.743771 6.22054 2.93355 3.09532 6.04554 1.54443Z" fill="url(#paint0_linear)"/>
                   <path d="M0.519078 9.87723C0.988622 9.25652 1.58745 8.71748 2.30385 8.30387C5.1736 6.64702 8.84315 7.63027 10.5 10.5C7.18629 10.5 4.5 13.1863 4.5 16.5C4.5 17.3277 4.6676 18.1163 4.97071 18.8336C2.27601 17.0421 0.5 13.9785 0.5 10.5C0.5 10.2909 0.506421 10.0832 0.519078 9.87723Z" fill="url(#paint1_linear)"/>
@@ -127,6 +133,30 @@ export default function Colours() {
                   </linearGradient>
                   </defs>
                 </svg>
+
+            </section>
+
+            <section className="subpage_section section_complementary">
+
+              <h2>complementary colours</h2>
+              <div style={{backgroundColor: 'red'}}>
+                <div className="inner"></div>
+              </div>
+              <div style={{backgroundColor: 'yellow'}}>
+                <div className="inner"></div>
+              </div>
+              <div style={{backgroundColor: 'lime'}}>
+                <div className="inner"></div>
+              </div>
+              <div style={{backgroundColor: 'aqua'}}>
+                <div className="inner"></div>
+              </div>
+              <div style={{backgroundColor: 'blue'}}>
+                <div className="inner"></div>
+              </div>
+              <div style={{backgroundColor: 'purple'}}>
+                <div className="inner"></div>
+              </div>
 
             </section>
 
