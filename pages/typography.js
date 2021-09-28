@@ -86,7 +86,7 @@ export default function Type() {
         animate="enter"
         exit="exit"
         variants={variants}
-        className="page-wrapper"
+        className="page-wrapper type-page"
     >
         <Head>
             <title>Typography - 🌐 Brutalist.Website</title>
@@ -100,6 +100,8 @@ export default function Type() {
             <section className="subpage_section section_type_stretched">
                 <div>STRETCHED</div>
                 <div>TYPE</div>
+
+                <p>forget what you're typography teacher might have taught you, stretched type is cool now <span className="rotate">😎</span></p>
             </section>
 
             <VariableType/>

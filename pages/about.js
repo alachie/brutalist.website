@@ -56,6 +56,8 @@ export default function About() {
           </Marquee>
 
           <p className="about-info">As far back 2014, a niche trend of “Brutalist websites” began to emerge on the World Wide Web 🌐. Websites which design deliberately rejects modern design standards, favouring a more “raw” and experimental approach, harkening back to early 90s web design. </p>
+          <p className="about-info">This website aims to be a showcase of different brutalist elements, commonly used design patterns, and aesthetic signifires.</p>
+
 
           <motion.div className="about-box" drag dragMomentum={false}>
             <h2>🔬 Research Question</h2>
