@@ -46,15 +46,15 @@ export default function Home() {
   const useSSRLocalStorage = (key, initial) =>
     typeof window !== "undefined" ? useLocalStorage(key, initial) : [initial];
 
-  const [showAbout, setAbout] = useState(false)
-  const [showQuestion, setQuestion] = useState(false)
+  // const [showAbout, setAbout] = useState(false)
+  // const [showQuestion, setQuestion] = useState(false)
   const [reload, setReload] = useState(0)
 
-  const [z, setZ] = useState(1)
-  const updateZ = (event) => {
-    setZ(z + 1)
-    event.currentTarget.style.zIndex = z;
-  }
+  // const [z, setZ] = useState(1)
+  // const updateZ = (event) => {
+  //   setZ(z + 1)
+  //   event.currentTarget.style.zIndex = z;
+  // }
 
   const [fontSize, setFontSize] = useSSRLocalStorage('fontSize', 16)
   const [bgColour, setBgColour] = useSSRLocalStorage('bgColor', 'lightgrey')
@@ -93,7 +93,7 @@ export default function Home() {
         item.style.top = getRandom(0, window.innerHeight - 200) + 'px';
       }) 
     }
-  }, [showAbout, showQuestion, reload, displayMode])
+  }, [reload, displayMode])
 
   useEffect(() => {
     document.documentElement.style.fontSize = fontSize + 'px';
@@ -104,26 +104,7 @@ export default function Home() {
   }, [bgColour])
 
   useEffect(() => {
-    switch (font) {
-      case 'sans':
-        document.documentElement.style.fontFamily = 'helvetica';
-        break;
-
-      case 'serif':
-        document.documentElement.style.fontFamily = 'times new roman';
-        break;
-
-      case 'blackletter':
-        document.documentElement.style.fontFamily = 'Respira Black';
-        break;
-
-      case 'humour':
-        document.documentElement.style.fontFamily = 'comic sans ms';
-        break;
-    
-      default:
-        break;
-    }
+    document.documentElement.style.fontFamily = font;
   }, [font])
 
   const onFontChange = (e) => {
@@ -170,20 +151,20 @@ export default function Home() {
         <motion.li variants={fadeIn}><Link href="/typography">Typography</Link></motion.li>
         <motion.li variants={fadeIn}><Link href="/interaction">Interaction</Link></motion.li>
         <motion.li variants={fadeIn}><Link href="/colours">Colours</Link></motion.li>
-        <motion.li variants={fadeIn}><a href="#" onClick={() => {setAbout(true);setQuestion(true)}}>About</a></motion.li>
+        <motion.li variants={fadeIn}><Link href="/about">About</Link></motion.li>
       </motion.ol>
       
-      {showQuestion && <motion.div className="about-box" drag dragMomentum={false} onMouseDown={updateZ}>
+      {/* {showQuestion && <motion.div className="about-box" drag dragMomentum={false} onMouseDown={updateZ}>
         <h2>🔬 Research Question</h2>
         <p>Investigating the aesthetic signifiers of brutalist web design through the creation of an educational website/interactive experience, as practice-based research.</p>
         <button onClick={() => {setQuestion(false)}}>&times;</button>
-      </motion.div>}
-
+      </motion.div>} */}
+{/* 
       {showAbout && <motion.div className="about-box" drag dragMomentum={false} onMouseDown={updateZ}>
         <h2>🤔 About</h2>
         <p>Feugiat massa amet mauris condimentum eget, sociis conubia ridiculus morbi.</p>
         <button onClick={() => {setAbout(false)}}>&times;</button>
-      </motion.div>}
+      </motion.div>} */}
 
       <DrawBg/>
       <footer>
@@ -194,12 +175,12 @@ export default function Home() {
           <input type="range" min="16" max="30" value={fontSize} onChange={onFontChange} step="0.1" />
           <input type="color" value="#ff0000" value={bgColour} onChange={onBgChange}/>
           
-          <select name="font" onChange={handleFontSelect}>
-            <option value="sans">Sans-serif</option>
-            <option value="serif">Serif</option>
+          <select name="font" onChange={handleFontSelect} value={font}>
+            <option value="helvetica">Sans-serif</option>
+            <option value="times new roman">Serif</option>
             <option value="display">display</option>
-            <option value="blackletter">blackletter</option>
-            <option value="humour">humour</option>
+            <option value="chomsky">blackletter</option>
+            <option value="comic sans ms">humour</option>
           </select>
         </div>
         <div>&copy; 2021</div>

@@ -46,6 +46,9 @@ function MyApp({ Component, pageProps }) {
     Router.events.on('routeChangeError', () => {
       setLoading(false)
     })
+
+    // document.documentElement.style.fontSize = localStorage.getItem('fontSize') + 'px';
+    // document.documentElement.style.setProperty('--background', localStorage.getItem('bgColor'));
   }, [])
 
   return (

@@ -33,6 +33,7 @@
 
 .section_layout_scatter {
     position: relative;
+    overflow: hidden;
 }
 
 .section_layout_scatter h1{
@@ -168,14 +169,15 @@
     height: 100%;
     overflow-x: hidden;
     overflow-y: scroll;
-    background-color: rgb(181, 181, 181);
+    background: linear-gradient(90deg, rgb(181, 181, 181) 80%, red);
 }
 
 .section_layout_two_cols>div:nth-child(2) {
-    background-color: rgb(118, 118, 118);
+    background: linear-gradient(-90deg, rgb(118, 118, 118) 80%, red);
+    /* background: rgb(118, 118, 118); */
 }
 
 .section_layout_two_cols>div:hover {
-    background-color: blue;
+    background: blue;
     color: white;
 }

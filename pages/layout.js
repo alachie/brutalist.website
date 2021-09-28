@@ -76,14 +76,14 @@ export default function Home() {
         
         <div>
             <section className="subpage_section section_layout_grid">
-                <div>HUGE</div>
-                <div>VIBES</div>
+                <div>BRUTALIST</div>
+                <div>WEBSITE</div>
                 <div></div>
                 <div></div>
-                <div>G</div>
-                <div>R</div>
-                <div>I</div>
-                <div>D</div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
                 <div></div>
                 <div></div>
                 <div>🍄</div>

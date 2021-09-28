@@ -27,7 +27,7 @@ const variants = {
   }
 }
 
-function Modal({children}) {
+export function Modal({children}) {
     const [isBrowser, setIsBrowser] = useState(false);
   
     useEffect(() => {
@@ -42,7 +42,6 @@ function Modal({children}) {
     } else {
       return null;
     }    
-  
 }
 
 function VariableType() {

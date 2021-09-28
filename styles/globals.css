@@ -181,3 +181,59 @@ footer {
   text-indent: 4vw;
   float: right;
 }
+
+.about-page {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: red;
+  color: black;
+}
+.about-page ::selection {
+  background: black;
+  color: red;
+}
+.about-page canvas {
+  z-index: 1;
+  pointer-events: none;
+}
+
+.about-page-inner {
+  z-index: 2;
+}
+
+.about-page .about-box {
+  right: 10vw;
+  top: 60vh;
+  position: absolute;
+  z-index: 10;
+}
+
+.about-page .marquee-wrapper {
+  font-size: 3vw;
+}
+
+.about-credits {
+  margin: 4rem;
+}
+.about-credits table {
+  min-width: 30vw;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.about-credits tr {
+  vertical-align: top;
+}
+
+.about-credits table td:nth-child(2) {
+  max-width: 15vw;
+}
+.about-credits p {
+  max-width: 30vw;
+}
+
+.about-info {
+  max-width: 23em;
+  text-indent: 4em;
+  margin: 4rem;
+  font-size: 2rem;
+}
