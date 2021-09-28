@@ -41,6 +41,10 @@
     width: 100%;
     height: 100vh;
     cursor: grab;
+    cursor: url("/cursor-hand.png"), pointer !important;
+}
+.threed-page:active {
+    cursor: url("/cursor-grab.png"), pointer !important;
 }
 
 .dvd-page {
@@ -99,6 +103,8 @@
     display: flex;
     padding: 8px;
     cursor: grab;
+    cursor: url("/cursor-grab.png"), pointer !important;
+
 }
 .window .toolbar h3 {
     flex: 1;
@@ -127,6 +133,7 @@
     align-items: center;
     width: calc(64px + 1rem);
     cursor: pointer;
+    cursor: url("/cursor-pointer.png"), pointer !important;
     padding: 1rem;
 }
 

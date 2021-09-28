@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import Link from 'next/link'
 import {motion} from 'framer-motion'
 import Head from 'next/head'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 
 const variants = {
   initial: { 
@@ -79,6 +79,45 @@ function VariableType() {
     )
 }
 
+// function TextStretch() {
+//   const textRef = useRef(null);
+//   const container = useRef(null);
+//   const [wide, setWide] = useState(true);
+//   const [text, setText] = useState('hello world');
+
+//   const strings = ['Hello World', '🍄 Mushroom', 'Brutalist', 'Brutalist Websites', 'HUGE VIBES', 'WWW', 'a', '🤠', '&']
+
+//   useEffect(() => {
+    
+//     setInterval(() => {
+//       setText(strings[Math.floor(Math.random() * strings.length)])
+//       const scaleX = container.current.offsetWidth / textRef.current.offsetWidth;
+//       const scaleY = window.innerHeight / textRef.current.offsetHeight;
+
+//       textRef.current.style.transform = `scaleX(${scaleX}) scaleY(${scaleY})`
+//     }, 500);
+    
+//   }, [])  
+
+//   const handleClick = () => {
+//     setWide(!wide)
+//   }
+
+//   useEffect(() => {
+//     if(wide) {
+//       container.current.style.width = '100vw'
+//     } else {
+//       container.current.style.width = '25vw'
+//     }
+//   }, [wide])
+
+//   return (
+//     <section className="subpage_section section_random_stretch" onClick={handleClick} ref={container}>
+//       <div ref={textRef}>{text}</div>
+//     </section>
+//   )
+// }
+
 export default function Type() {
   return (
     <motion.div
@@ -103,6 +142,8 @@ export default function Type() {
 
                 <p>forget what your typography teacher might have taught you, stretched type is cool now <span className="rotate">😎</span></p>
             </section>
+            
+            {/* <TextStretch/> */}
 
             <VariableType/>
 
@@ -139,6 +180,7 @@ export default function Type() {
                   <li>Space Mono</li>
                 </ul>
             </section>
+
            
         </div>
     </motion.div>

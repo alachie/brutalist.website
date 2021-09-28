@@ -16,6 +16,7 @@
     border-right: 2px solid darkgray;
     border-bottom: 2px solid darkgray;
     background: var(--background);
+    padding: 0;
 }
 .section_layout_grid h1 {
     grid-column: 1 /-1;

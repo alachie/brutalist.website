@@ -58,7 +58,7 @@ export default function Home() {
 
   const [fontSize, setFontSize] = useSSRLocalStorage('fontSize', 16)
   const [bgColour, setBgColour] = useSSRLocalStorage('bgColor', 'lightgrey')
-  const [font, setFont] = useSSRLocalStorage('font', 'sans')
+  const [font, setFont] = useSSRLocalStorage('font', 'helvetica')
   const [displayMode, setDisplayMode] = useSSRLocalStorage('display', 'grid')
 
   const getRandom = (min, max) => Math.floor(Math.random()*(max-min+1)+min);
