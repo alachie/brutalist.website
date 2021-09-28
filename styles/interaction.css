@@ -1,4 +1,9 @@
 .image-smear-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     margin: 0;
     background-size: cover;
     width: 100%;
@@ -39,6 +44,7 @@
 }
 
 .dvd-page {
+    position: fixed;
     background: black;
     width: 100%;
     height: 100%;
@@ -63,4 +69,97 @@
     height: 4rem;
     font-size: 4rem;
     background: transparent !important;
+}
+
+.interaction-page {
+    min-height: 100vh;
+    /* background: url('https://512pixels.net/downloads/macos-wallpapers-thumbs/10-3--thumb.png');
+    background-size: cover; */
+}
+
+.window {
+    width: 40vw;
+    min-width: 40vw;
+    min-height: 25vw;
+    background: grey;
+    box-shadow: 10px 10px 50px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+}
+
+.window.fullscreen {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: none !important;
+}
+.window .toolbar {
+    display: flex;
+    padding: 8px;
+    cursor: grab;
+}
+.window .toolbar h3 {
+    flex: 1;
+    text-align: center;
+    
+}
+
+.window .window_contents {
+    flex: 1;
+    display: flex;
+}
+.window iframe {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+}
+.icons {
+    display: flex;
+
+}
+
+.desktop-icon {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    align-items: center;
+    width: calc(64px + 1rem);
+    cursor: pointer;
+    padding: 1rem;
+}
+
+.desktop-icon .icon {
+    font-size: 64px;
+}
+.desktop-icon .title {
+    text-align: center;
+}
+
+.desktop-icon:hover .title {
+    background: black;
+    color: white;
+}
+
+.desktop-icon:active {
+    background: rgba(0,0,0,0.5);
+}
+
+iframe.dragging {
+    display: none;
+}
+
+.dragging-text {
+    margin: 0;
+    font-size: 4rem;
+    color: red;
+}
+
+.clock {
+    position: fixed;
+    bottom: 4rem;
+    right: 4rem;
+    font-size: 10vw;
+    margin: 0;
 }

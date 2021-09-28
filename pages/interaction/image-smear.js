@@ -21,8 +21,8 @@ export default function Drag() {
         var vw = window.innerWidth;
         var vh = window.innerHeight;
 
-        ctx.canvas.width  = vw - convertRemToPixels(4);
-        ctx.canvas.height = vh - convertRemToPixels(4);
+        ctx.canvas.width  = vw;
+        ctx.canvas.height = vh;
 
         var mouseX = 0;
         var mouseY = 0;
@@ -76,6 +76,14 @@ export default function Drag() {
 
         canvas.addEventListener('mouseup', () => {
             mouseDown = false;
+        });
+
+        window.addEventListener('resize', function() {
+            var vw = window.innerWidth;
+            var vh = window.innerHeight;
+
+            ctx.canvas.width  = vw;
+            ctx.canvas.height = vh;
         });
 
         requestAnimationFrame(drawCanvas);

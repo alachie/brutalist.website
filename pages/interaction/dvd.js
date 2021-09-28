@@ -137,8 +137,6 @@ export default function DVD() {
     return (
         <div className="dvd-page" onClick={createBall}>
             
-            <h1>Click </h1>
-
             <div className="dvd">dvd</div>
 
             {balls.map(ball => <Ball key={ball.i} text={ball.text} x={ball.x} y={ball.y}/>)}

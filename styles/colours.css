@@ -244,7 +244,7 @@
     transform 1s cubic-bezier(.61, .43, .12, .96);
     transform: scale(1);
 }
-.section_complementary .inner:hover {
+.section_complementary > div:hover .inner{
     border-radius: 0;
     transform: scale(0.5);
 }

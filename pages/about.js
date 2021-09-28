@@ -62,7 +62,6 @@ export default function About() {
           <motion.div className="about-box" drag dragMomentum={false}>
             <h2>🔬 Research Question</h2>
             <p>Investigating the aesthetic signifiers of brutalist web design through the creation of an educational website/interactive experience, as practice-based research.</p>
-            <button onClick={() => {setQuestion(false)}}>&times;</button>
           </motion.div>
 
           <section className="about-credits">

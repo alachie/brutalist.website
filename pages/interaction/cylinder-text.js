@@ -1,9 +1,7 @@
 import { useRef, useState, Suspense } from 'react'
-import Head from 'next/head'
-import Link from 'next/link'
 import { Canvas, useFrame, useLoader, extend, useThree } from '@react-three/fiber'
-import { TextureLoader } from '../node_modules/three/src/loaders/TextureLoader'
-import { OrbitControls } from "../node_modules/three/examples/jsm/controls/OrbitControls";
+import { TextureLoader } from '../../node_modules/three/src/loaders/TextureLoader'
+import { OrbitControls } from "../../node_modules/three/examples/jsm/controls/OrbitControls";
 import { DoubleSide } from 'three'
 
 extend({ OrbitControls });

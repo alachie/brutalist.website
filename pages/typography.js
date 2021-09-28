@@ -101,7 +101,7 @@ export default function Type() {
                 <div>STRETCHED</div>
                 <div>TYPE</div>
 
-                <p>forget what you're typography teacher might have taught you, stretched type is cool now <span className="rotate">😎</span></p>
+                <p>forget what your typography teacher might have taught you, stretched type is cool now <span className="rotate">😎</span></p>
             </section>
 
             <VariableType/>

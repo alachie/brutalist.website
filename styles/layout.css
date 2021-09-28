@@ -24,7 +24,7 @@
 .section_layout_grid > div{
     border-left: 2px solid darkgray;
     border-top: 2px solid darkgray;
-    cursor: pointer;
+    cursor: url("/cursor-pointer.png"), pointer !important;
 }
 
 .section_layout_grid>div:hover {
@@ -43,7 +43,7 @@
 }
 
 .section_layout_scatter img {
-    cursor: move;
+    cursor: url("/cursor-move.png"), pointer !important;
 }
 
 .scatter_drag {
@@ -101,7 +101,7 @@
     min-height: 10vw;
     transition: width 0.3s ease-in-out,min-height 0.3s ease-in-out;
     overflow: hidden;
-    cursor: pointer;
+    cursor: url("/cursor-pointer.png"), pointer !important;
 
 }
 .section_layout_quads .active {

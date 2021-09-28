@@ -42,6 +42,17 @@ ol li {
   counter-increment: step-counter;
 }
 
+html {
+  cursor: url("/cursor-default.png"), auto !important;
+}
+
+a,
+button,
+input,
+label {
+  cursor: url("/cursor-pointer.png"), pointer !important;
+}
+
 .page-wrapper {
   position: absolute;
   top: 0;
@@ -85,6 +96,7 @@ ol li::before {
   text-align: left;
   position: absolute;
   max-width: 20rem;
+  cursor: url("/cursor-move.png"), auto !important;
 }
 
 footer {
