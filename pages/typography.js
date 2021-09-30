@@ -103,13 +103,13 @@ function VariableType() {
 //     setWide(!wide)
 //   }
 
-//   useEffect(() => {
-//     if(wide) {
-//       container.current.style.width = '100vw'
-//     } else {
-//       container.current.style.width = '25vw'
-//     }
-//   }, [wide])
+//   // useEffect(() => {
+//   //   if(wide) {
+//   //     container.current.style.width = '100vw'
+//   //   } else {
+//   //     container.current.style.width = '25vw'
+//   //   }
+//   // }, [wide])
 
 //   return (
 //     <section className="subpage_section section_random_stretch" onClick={handleClick} ref={container}>

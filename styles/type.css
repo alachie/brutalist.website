@@ -94,3 +94,10 @@
 .section_type_blurred h1:hover {
     filter: blur(0);
 }
+
+.section_random_stretch {
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    font-size: 10vw;
+}

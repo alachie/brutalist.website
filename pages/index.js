@@ -153,34 +153,22 @@ export default function Home() {
         <motion.li variants={fadeIn}><Link href="/colours">Colours</Link></motion.li>
         <motion.li variants={fadeIn}><Link href="/about">About</Link></motion.li>
       </motion.ol>
-      
-      {/* {showQuestion && <motion.div className="about-box" drag dragMomentum={false} onMouseDown={updateZ}>
-        <h2>🔬 Research Question</h2>
-        <p>Investigating the aesthetic signifiers of brutalist web design through the creation of an educational website/interactive experience, as practice-based research.</p>
-        <button onClick={() => {setQuestion(false)}}>&times;</button>
-      </motion.div>} */}
-{/* 
-      {showAbout && <motion.div className="about-box" drag dragMomentum={false} onMouseDown={updateZ}>
-        <h2>🤔 About</h2>
-        <p>Feugiat massa amet mauris condimentum eget, sociis conubia ridiculus morbi.</p>
-        <button onClick={() => {setAbout(false)}}>&times;</button>
-      </motion.div>} */}
-
+    
       <DrawBg/>
+    
       <footer>
         <div>
-          <button onClick={() => {setReload(reload + 1)}}>♻️ Reload</button>
-          <button onClick={() => {setDisplayMode('grid')}}>Scatter</button>
-          <button onClick={() => {setDisplayMode('list')}}>List</button>
+          {(displayMode === 'grid') && <button onClick={() => {setReload(reload + 1)}}>♻️ Reload</button>}
+          {(displayMode !== 'grid') && <button onClick={() => {setDisplayMode('grid')}}>Scatter</button>}
+          {(displayMode === 'grid') && <button onClick={() => {setDisplayMode('list')}}>List</button>}
           <input type="range" min="16" max="30" value={fontSize} onChange={onFontChange} step="0.1" />
           <input type="color" value="#ff0000" value={bgColour} onChange={onBgChange}/>
           
           <select name="font" onChange={handleFontSelect} value={font}>
             <option value="helvetica">Sans-serif</option>
             <option value="times new roman">Serif</option>
-            <option value="display">display</option>
-            <option value="chomsky">blackletter</option>
-            <option value="comic sans ms">humour</option>
+            <option value="chomsky">Blackletter</option>
+            <option value="comic sans ms">Comic Sans</option>
           </select>
         </div>
         <div>&copy; 2021</div>
