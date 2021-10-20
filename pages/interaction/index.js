@@ -67,6 +67,7 @@ export default function Interaction() {
   const [showSmear, setSmear] = useState(false)
   const [showCylinder, setCylinder] = useState(false)
   const [motionText, setMotionText] = useState(false)
+  const [cursorCubes, setCursorCubes] = useState(false)
 
   const [z, setZ] = useState(1)
   const updateZ = (event) => {
@@ -108,6 +109,11 @@ export default function Interaction() {
             <div className="icon">☄️</div>
             <div className="title">Motion Text</div>
           </div>
+
+          <div className="desktop-icon" onClick={() => setCursorCubes(true)}>
+            <div className="icon">🐁</div>
+            <div className="title">Cursor Cubes</div>
+          </div>
         </div>
         
 
@@ -115,6 +121,7 @@ export default function Interaction() {
         {showSmear && <Window onMouseDown={updateZ} close={()=> setSmear(false)} title="🖼️ Image Smear" url="/interaction/image-smear"/>}
         {showCylinder && <Window onMouseDown={updateZ} close={()=> setCylinder(false)} title="🔠 Cylinder Text" url="/interaction/cylinder-text"/>}
         {motionText && <Window onMouseDown={updateZ} close={()=> setMotionText(false)} title="☄️ Motion Trail" url="/interaction/motion-trail"/>}
+        {cursorCubes && <Window onMouseDown={updateZ} close={()=> setCursorCubes(false)} title="☄️ Motion Trail" url="https://prototype.brutalist.website/demo/cursor-cube"/>}
 
         <Clock/>
     </motion.div>
