@@ -121,7 +121,7 @@ export default function Interaction() {
         {showSmear && <Window onMouseDown={updateZ} close={()=> setSmear(false)} title="🖼️ Image Smear" url="/interaction/image-smear"/>}
         {showCylinder && <Window onMouseDown={updateZ} close={()=> setCylinder(false)} title="🔠 Cylinder Text" url="/interaction/cylinder-text"/>}
         {motionText && <Window onMouseDown={updateZ} close={()=> setMotionText(false)} title="☄️ Motion Trail" url="/interaction/motion-trail"/>}
-        {cursorCubes && <Window onMouseDown={updateZ} close={()=> setCursorCubes(false)} title="☄️ Motion Trail" url="https://prototype.brutalist.website/demo/cursor-cube"/>}
+        {cursorCubes && <Window onMouseDown={updateZ} close={()=> setCursorCubes(false)} title="🐁 Cursor Cubes" url="https://prototype.brutalist.website/demo/cursor-cube"/>}
 
         <Clock/>
     </motion.div>
