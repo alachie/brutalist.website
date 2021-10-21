@@ -68,6 +68,7 @@ export default function Interaction() {
   const [showCylinder, setCylinder] = useState(false)
   const [motionText, setMotionText] = useState(false)
   const [cursorCubes, setCursorCubes] = useState(false)
+  const [toasters, setToasters] = useState(false)
 
   const [z, setZ] = useState(1)
   const updateZ = (event) => {
@@ -114,6 +115,11 @@ export default function Interaction() {
             <div className="icon">🐁</div>
             <div className="title">Cursor Cubes</div>
           </div>
+
+          <div className="desktop-icon" onClick={() => setToasters(true)}>
+            <div className="icon">🍞</div>
+            <div className="title">Flying Toasters</div>
+          </div>
         </div>
         
 
@@ -122,6 +128,7 @@ export default function Interaction() {
         {showCylinder && <Window onMouseDown={updateZ} close={()=> setCylinder(false)} title="🔠 Cylinder Text" url="/interaction/cylinder-text"/>}
         {motionText && <Window onMouseDown={updateZ} close={()=> setMotionText(false)} title="☄️ Motion Trail" url="/interaction/motion-trail"/>}
         {cursorCubes && <Window onMouseDown={updateZ} close={()=> setCursorCubes(false)} title="🐁 Cursor Cubes" url="https://prototype.brutalist.website/demo/cursor-cube"/>}
+        {toasters && <Window onMouseDown={updateZ} close={()=> setToasters(false)} title="🍞 Flying Toasters" url="https://www.bryanbraun.com/after-dark-css/all/flying-toasters.html"/>}
 
         <Clock/>
     </motion.div>

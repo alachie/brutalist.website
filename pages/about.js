@@ -103,6 +103,10 @@ export default function About() {
                   <td>Three.js Motion Trail by</td>
                   <td>https://tympanus.net/codrops/2021/07/21/creating-a-typography-motion-trail-effect-with-three-js/</td>
                 </tr>
+                <tr>
+                  <td>Flying Toasters by </td>
+                  <td>Bryan Braun https://github.com/bryanbraun/after-dark-css</td>
+                </tr>
 
               </tbody>
             </table>
