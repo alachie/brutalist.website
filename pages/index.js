@@ -147,11 +147,11 @@ export default function Home() {
           }
         }}
       >
-        <motion.li variants={fadeIn}><Link href="/layout">Layout</Link></motion.li>
-        <motion.li variants={fadeIn}><Link href="/typography">Typography</Link></motion.li>
-        <motion.li variants={fadeIn}><Link href="/interaction">Interaction</Link></motion.li>
-        <motion.li variants={fadeIn}><Link href="/colours">Colours</Link></motion.li>
-        <motion.li variants={fadeIn}><Link href="/about">About</Link></motion.li>
+        <motion.li variants={fadeIn}><Link prefetch={false} href="/layout">Layout</Link></motion.li>
+        <motion.li variants={fadeIn}><Link prefetch={false} href="/typography">Typography</Link></motion.li>
+        <motion.li variants={fadeIn}><Link prefetch={false} href="/interaction">Interaction</Link></motion.li>
+        <motion.li variants={fadeIn}><Link prefetch={false} href="/colours">Colours</Link></motion.li>
+        <motion.li variants={fadeIn}><Link prefetch={false} href="/about">About</Link></motion.li>
       </motion.ol>
     
       <DrawBg/>

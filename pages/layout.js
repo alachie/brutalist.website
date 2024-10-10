@@ -72,7 +72,7 @@ export default function Home() {
             <title>Layout - 🌐 Brutalist.Website</title>
         </Head>
         <h1 className="page-title">Layout</h1>
-        <Link href="/"><a className="back-link">&larr; 🏠 Home</a></Link>
+        <Link prefetch={false} href="/"><a className="back-link">&larr; 🏠 Home</a></Link>
         
         <div>
             <section className="subpage_section section_layout_grid">

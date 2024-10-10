@@ -61,7 +61,7 @@ export default function Colours() {
         </Head>
         
         <h1 className="page-title" style={{fontSize: '19.8vw'}}>Colours</h1>
-        <Link href="/"><a className="back-link">&larr; 🏠 Home</a></Link>
+        <Link href="/" prefetch={false}><a className="back-link">&larr; 🏠 Home</a></Link>
         
         <div>
             <p className="info-block">Brutalist websites frequently use bright &amp; obnoxious colours to grab attention ⚠️</p>

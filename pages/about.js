@@ -46,7 +46,7 @@ export default function About() {
 
         <div className="about-page-inner">
           <h1 className="page-title" style={{fontSize: '14.3vw'}}>About</h1>
-          <Link href="/"><a className="back-link">&larr; 🏠 Home</a></Link>
+          <Link href="/" prefetch={false}><a className="back-link">&larr; 🏠 Home</a></Link>
 
           <Marquee right>
             <div>Brutalist</div>

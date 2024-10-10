@@ -133,7 +133,7 @@ export default function Type() {
 
         </Head>
         <h1 className="page-title" style={{fontSize: '14.3vw'}}>Typography</h1>
-        <Link href="/"><a className="back-link">&larr; 🏠 Home</a></Link>
+        <Link prefetch={false} href="/"><a className="back-link">&larr; 🏠 Home</a></Link>
         
         <div>
             <section className="subpage_section section_type_stretched">
