@@ -88,7 +88,7 @@ export default function Interaction() {
             <title>Interaction - 🌐 Brutalist.Website</title>
         </Head>
         <h1 className="page-title" style={{fontSize: '14.5vw'}}>Interaction</h1>
-        <Link href="/"><a className="back-link">&larr; 🏠 Home</a></Link>
+        <Link href="/" prefetch={false}><a className="back-link">&larr; 🏠 Home</a></Link>
 
         <div className="icons">
           <div className="desktop-icon" onClick={() => setShowDVD(true)}>
